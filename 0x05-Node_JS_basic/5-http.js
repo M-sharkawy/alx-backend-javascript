@@ -4,6 +4,8 @@ const { countStudents } = require('./3-read_file_async');
 const hostname = '127.0.0.1';
 const port = 1245;
 
+const DB_FILE = './database.csv';
+
 const app = http.createServer((req, res) => {
   if (req.url === '/') {
     res.writeHead(200, { 'content-type': 'text/plain' });
@@ -11,7 +13,7 @@ const app = http.createServer((req, res) => {
   } else if (req.url === '/students') {
     res.writeHead(200, { 'content-type': 'text/plain' });
 
-    countStudents(process.argv[2])
+    countStudents(DB_FILE)
       .then((output) => {
         res.end(`This is the list of our students\n${output}`);
       })
