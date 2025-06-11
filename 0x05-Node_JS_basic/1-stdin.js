@@ -1,4 +1,4 @@
-process.stdout.write("Welcome to ALX, what is your name?"+ '\n');
+process.stdout.write('Welcome to ALX, what is your name?\n');
 
 if (process.stdin.isTTY) {
   process.stdin.on('data', data => {
@@ -12,6 +12,6 @@ if (process.stdin.isTTY) {
   });
 
   process.on('exit', () => {
-    console.log(`This important software is now closing\n`);
+    console.log('This important software is now closing\n');
   });
 }
